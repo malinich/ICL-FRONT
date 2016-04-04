@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <form>
+                <label for="mySelect">Choice:</label>
+                <select  class="form-control" name="mySelect" id="mySelect" ng-change="select()"
+                         ng-options="point.name for point in points track by point.id"
+                         ng-model="selected"></select>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form class="form-inline" name="fileForm">
+                <div class="form-group">
+                    <input name="file" type="file" nv-file-select uploader="uploader" />
+                    <button class="btn btn-default" ng-click="upload()" type="submit">Upload</button>
+                </div>
+                <div ng-show="fileForm.$error.file">
+                    <div ng-repeat="error in fileForm.$error.file">{{error}}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <nvd3 options='options' data='d3Data' api="api"></nvd3>
+        </div>
+    </div>
+</div>
