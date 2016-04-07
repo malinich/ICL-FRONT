@@ -37,7 +37,6 @@
     return this.api;
   };
 
-  app.utilize = {
-    UrlCore: UrlCore
-  }
+  app.utilize = app.utilize || {};
+  app.utilize.UrlCore = UrlCore;
 })();
